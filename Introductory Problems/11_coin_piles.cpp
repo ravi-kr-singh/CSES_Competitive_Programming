@@ -42,6 +42,23 @@ int main(){
     while(t--){
         int a,b;
         cin>>a>>b;
+        /*
+            x is the total number of moves--> 2 from A and 1 from B.
+            y is the total number of moves--> 2 from B and 1 from A.
+            Therefore,
+            a = 2x + y
+            b = x + 2y
+            On solving for x and y,
+            x = (2a - b)/3;
+            y = (2b - a)/3;
+            if x and y comes out to be integer then answer is YES
+            otherwise no;
+        */
+
+        if((2*a-b)>=0 && (2*a-b)%3==0 && (2*b-a)>=0 && (2*b-a)%3==0)
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
 
     }
 
