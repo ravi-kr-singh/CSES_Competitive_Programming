@@ -35,43 +35,34 @@ Output:
 */
 
 #include<iostream>
-#include<unordered_map>
-#include<algorithm>
+#include<set>
 using namespace std;
-
-void print_prices(int* tkts,int& n ,int* maxPrice,int& m){
-    unordered_map<int,int> freqTkts;
-    for(int i=0;i<n;i++)
-        freqTkts[tkts[i]]++;
-    
-    for(int i=0;i<m;i++){
-        int temp = maxPrice[i];
-        while(temp>0 && freqTkts[temp]==0)
-            temp--;
-        if(freqTkts[temp]>0){
-            cout<<temp<<endl;
-            freqTkts[temp]--;
-        }
-        else{
-            cout<<"-1\n";
-        }
-    }
-
-}
 
 int main(){
     int n,m;
     cin>>n>>m;
-    int* ticket_prices = new int[n];
-    int* customer_prices = new int[m];
+    multiset<int> tktPrice;
+    int* maxPrice = new int[m];
 
-    for(int i=0;i<n;i++)
-        cin>>ticket_prices[i];
-    
+    for(int i=0;i<n;i++){
+        int temp;
+        cin>>temp;
+        tktPrice.insert(temp);
+    }
     for(int i=0;i<m;i++)
-        cin>>customer_prices[i];
+        cin>>maxPrice[i];
     
-    print_prices(ticket_prices,n,customer_prices,m);
 
-    return 0;
+    for(int i=0;i<m;i++){
+        auto it = tktPrice.upper_bound(maxPrice[i]);
+        if(it == tktPrice.begin())
+            cout<<"-1"<<endl;
+        else{
+            it--;
+            cout<<(*it)<<endl;
+            tktPrice.erase(it);
+        }
+    }
+    
+    
 }
