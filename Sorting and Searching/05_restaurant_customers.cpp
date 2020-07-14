@@ -51,7 +51,7 @@ int max_customers(vector<pair<int,int>>& customerAtTimes,int& n){
             customerAtTimes[i].second += customerAtTimes[i-1].second;
             i++;
         }
-        ans = max(ans,customerAtTimes[i].second);
+        ans = max(ans,customerAtTimes[i-1].second);
         if(i<n){
             customerAtTimes[i].second += customerAtTimes[i-1].second;
             ans = max(ans,customerAtTimes[i].second);
