@@ -24,3 +24,25 @@ Input:
 Output:
 9
 */
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    int* arr = new int[n];
+    for(int i=0;i<n;i++)
+        cin>>arr[i];
+    
+    long long ans = arr[0];
+    long long temp = arr[0];
+    for(int i=1;i<n;i++){
+        long long num = arr[i];
+        temp = max(num,num+temp);
+        ans = max(ans,temp);
+    }
+    cout<<ans;
+
+    return 0;
+}
