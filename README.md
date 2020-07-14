@@ -5,12 +5,12 @@ Cses.fi is a finnish competitive programming site.
 
 ### Introductory Problems
 1. Weird Algorithm   
-  Problem Statement : https://cses.fi/problemset/task/1068 
-  Solution : https://github.com/ravi-kr-singh/CSES_Competitive_Programming/blob/master/Introductory%20Problems/01_weird_algorithm.cpp
+  Problem Statement : https://cses.fi/problemset/task/1068 \
+  Solution : https://github.com/ravi-kr-singh/CSES_Competitive_Programming/blob/master/Introductory%20Problems/01_weird_algorithm.cpp \
   
 2. Missing Number
-  Problem Statement : https://cses.fi/problemset/task/1068 
-  Solution : https://github.com/ravi-kr-singh/CSES_Competitive_Programming/blob/master/Introductory%20Problems/01_weird_algorithm.cpp
+  Problem Statement : https://cses.fi/problemset/task/1068 \
+  Solution : https://github.com/ravi-kr-singh/CSES_Competitive_Programming/blob/master/Introductory%20Problems/01_weird_algorithm.cpp \
   
 3. Repetitions
 4. Increasing Array
