@@ -4,7 +4,7 @@ These are solutions of 200 problems mentioned on https://cses.fi/problemset/ in 
 Cses.fi is a finnish competitive programming site.
 
 ## Introductory Problems
-### 01. Weird Algorithm
+#### 01. Weird Algorithm
 ### 02. Missing Number
 ### 03. Repetitions
 ### 04. Increasing Array
