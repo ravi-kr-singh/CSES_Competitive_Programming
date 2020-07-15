@@ -28,3 +28,35 @@ Input:
 Output:
 5
 */
+
+#include<iostream>
+#include<algorithm>
+#include<unordered_map>
+#include<cmath>
+using namespace std;
+
+unordered_map<int,int> freq;
+
+bool compf(int& a,int& b){
+    return freq[a]>freq[b];
+}
+
+int main(){
+    int n;
+    cin>>n;
+    int* arr = new int[n];
+
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+        freq[arr[i]]++;
+    }
+    sort(arr,arr+n,compf);
+    
+    long long ans = 0;
+    for(int i=1;i<n;i++){
+        ans += abs(arr[i]-arr[0]);
+    }
+    cout<<ans;
+
+    return 0;
+}
