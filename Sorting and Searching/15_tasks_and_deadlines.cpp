@@ -41,9 +41,9 @@ int main(){
     vector<pair<int,int>> tasks(n);
     for(int i=0;i<n;i++)
         cin>>tasks[i].first>>tasks[i].second;
-    sort(tasks.begin(),tasks.end());
+    sort(tasks.begin(),tasks.end()); // Shortest job first
 
-    long long ans = 0;
+    long long ans = 0;  
     long long finish = 0;
     for(int i=0;i<n;i++){
         finish += tasks[i].first;
