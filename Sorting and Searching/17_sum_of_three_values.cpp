@@ -34,7 +34,7 @@ using namespace std;
 void find_ans(vector<pair<int,int>>& arr,int& n,int& x){
     for(int i=n-1;i>=0;i--){
         int required_sum = x - arr[i].first;
-        if(x>0){
+        if(required_sum>0){
             int start = 0;
             int end = i-1;
             while(start<end){
