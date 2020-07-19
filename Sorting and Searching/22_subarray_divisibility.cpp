@@ -37,18 +37,25 @@ int main(){
         cin>>arr[i];
     }
     map<long long,int> freqSum;
+    
+    //(a - b) mod p = ((a mod p - b mod p) + p) mod p
 
     long long curr_sum = 0;
     long long count = 0;
     int t = 0;
     for(int i=0;i<n;i++){
         curr_sum += arr[i];
-        if(curr_sum % n == 0){
-            count += t + 1;
-            t = co
-        }
+        
+        int remainder = ((curr_sum % n) + n) % n;
+
+        if(remainder == 0)
+            count++;
+        
+        count += freqSum[remainder];
+
+        freqSum[remainder]++;
         
     }
-
+    cout<<count<<endl;
     return 0;
 }
