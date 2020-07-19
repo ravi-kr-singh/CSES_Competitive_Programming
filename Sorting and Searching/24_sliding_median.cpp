@@ -29,47 +29,34 @@ Output:
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include<utility>
 using namespace std;
+
+
 
 int main(){
     int n,k;
     cin>>n>>k;
-    int* arr = new int[n];
+    vector<pair<int,int>> arr(n);
     for(int i=0;i<n;i++){
-        cin>>arr[i];
+        cin>>arr[i].first;
+        arr[i].second = i;
     }
-    vector<int> window(k);
-    vector<int> tempWindow;
-    for(int i=0;i<k;i++)
-        window[i] = arr[i];
+    
 
-    tempWindow = window;
-    int median;
+    nth_element(arr.begin(),arr.begin()+(k-1)/2,arr.begin()+k);
+    cout<<arr[(k-1)/2].first<<" ";
+
+
     for(int i=k;i<n;i++){
-  
-        nth_element(window.begin(),window.begin()+k/2,window.end());
-        if(k%2 ==0){
-            
-            nth_element(window.begin(),window.begin()+k/2 -1,window.end());
-            median = (window[k/2]+window[k/2-1])/2;
-        }
-        else
-            median = window[k/2];
-        cout<<median<<" ";
-        tempWindow.erase(window.begin());
-        tempWindow.push_back(arr[i]);
-        window = tempWindow;
+        nth_element(arr.begin()+i-k+1,arr.begin()+i-k+1+(k-1)/2,arr.begin()+i+1);
+        pair<int,int> temp = arr[i-k+1+(k-1)/2];
+        cout<<temp.first<<" ";
+        arr[i-k+1+(k-1)/2] = arr[temp.second];
+        arr[temp.second] = temp;
+    
     }
- 
-    nth_element(window.begin(),window.begin()+k/2,window.end());
-    if(k%2 ==0){
-        
-        nth_element(window.begin(),window.begin()+k/2 -1,window.end());
-        median = (window[k/2]+window[k/2-1])/2;
-    }
-    else
-        median = window[k/2];
-    cout<<median<<" ";
+    
 
 
     return 0;
