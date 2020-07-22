@@ -13,7 +13,7 @@ The only input line contains an integer n.
  
 Output
  
-Print the answer modulo 109+7.
+Print the answer modulo 10^9+7.
  
 Constraints
 1≤n≤500
